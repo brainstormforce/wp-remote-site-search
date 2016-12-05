@@ -24,6 +24,10 @@ URL from where you want to get the informaion
 category_slug=""  
 You can also pass `category_slug1,category_slug2` to search multiple posts  from multiple categories. For example category_slug="recipes,books"
 
+type = ""
+Default type is post,
+You can add custom post type also.
+
 placeholder=""  
 The text displayed in the input. Defaults to `Search...`.
 
@@ -46,7 +50,7 @@ Multiple Categories:
 
 
 Title & Placeholder for Search Box
-'[wp_remote_site_search rest_api="https://example.com" category_slug="recipes,books" title="How can we help?" placeholder="Have a question? Enter a search term." max_results="30" html_input="<button>Get In Touch!</button>"]'
+'[wp_remote_site_search rest_api="https://example.com" category_slug="recipes,books" type="books" title="How can we help?" placeholder="Have a question? Enter a search term." max_results="30" html_input="<button>Get In Touch!</button>"]'
 
 == Installation ==
 

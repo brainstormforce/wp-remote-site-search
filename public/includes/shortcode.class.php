@@ -42,13 +42,22 @@ class wpRemoteSiteSearchShortcode{
 			'rest_api'			=> '', //restapi url
 			'category_slug'		=> '', //category slug
 			'max_results'		=> 30, // return a certain number of search results
-			'html_input'		=>''
+			'html_input'		=>'', //html input to add after results
+			'type'				=> ''
+
 			);
 		$atts = shortcode_atts( $defaults, $atts );
-		$type = 'posts?'; //will change in future
+		if ($atts['type'] == '') {
+			$type = sprintf('posts?'); //default posts
+		}
+		else{
+			$type = sprintf('%s?', trim( $atts['type'] ));//custom post type
+		}
 		$html_input = html_entity_decode( $atts['html_input'] );//append html after all results
 
 		ob_start();
+
+		var_dump($type);
 		?>
 		<!-- search box wrapper -->
 		<div id="search-wrapper" class="search-wrapper wrapper" data-number=<?php echo esc_attr($atts['max_results']); ?> >
