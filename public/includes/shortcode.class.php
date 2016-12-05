@@ -1,71 +1,81 @@
 <?php
 /**
-* Multisite Search ShortCode Class
+* Remote Site Search ShortCode Class
 *
 *	@since 0.1
 *
 */
-class wpMultisiteSearchShortcode{
+class wpRemoteSiteSearchShortcode{
 
-
-	public static function Instance()
+  /**
+	* Instance of wpRemoteSiteSearchShortcode
+	*
+	*	@since 0.1
+	*
+	*/
+	public static function instance()
     {
-        static $inst = null;
-        if ($inst === null) {
-            $inst = new wpMultisiteSearchShortcode();
+        static $instance = null;
+        if ($instance === null) {
+            $instance = new wpRemoteSiteSearchShortcode();
         }
-        return $inst;
+        return $instance;
     }
 
 	private function __construct(){
 
-		add_shortcode('multisite_search', array($this,'shortcode'));
+		add_shortcode('wp_remote_site_search', array($this,'shortcode'));
 	}
 
-	public function shortcode( $atts, $content = null ) {
+   /**
+	* Shortcoe function
+	*	
+	*   @param  {[array]} $atts   [values given in shortcode]
+	*	@since   0.1
+	*
+	*/
+	public function shortcode( $atts ) {
 
 		$defaults = array(
-			'title'			=> __( 'How can we help?', 'wp-multisite-search' ), // title for searcbox
-			'placeholder'	=> __( 'Search...', 'wp-multisite-search' ), // placeholder
-			'rest_api'		=> '', //restapi url
-			'category_slug'	=> '', //category slug
-			'max_results'	=> 30, // return a certain number of search results
-			'html_code'		=>''
+			'title'				=> __( 'How can we help?', 'wp-remote-site-search' ), // title for searcbox
+			'placeholder'		=> __( 'Search...', 'wp-remote-site-search' ), // placeholder
+			'rest_api'			=> '', //restapi url
+			'category_slug'		=> '', //category slug
+			'max_results'		=> 30, // return a certain number of search results
+			'html_input'		=>''
 			);
 		$atts = shortcode_atts( $defaults, $atts );
-		
 		$type = 'posts?'; //will change in future
+		$html_input = html_entity_decode( $atts['html_input'] );//append html after all results
 
-
-
-		  $html_code = html_entity_decode( $atts['html_code'] );
 		ob_start();
 		?>
-
-
 		<!-- search box wrapper -->
-		<div id="wpms" class="wpms wrapper" data-number=<?php echo esc_attr($atts['max_results']); ?> >
-			<div class="before-wrapper"></div>
+		<div id="search-wrapper" class="search-wrapper wrapper" data-number=<?php echo esc_attr($atts['max_results']); ?> >
 
 			<!-- search input box -->
-			<div id="wpms--input-wrap">
+			<div id="input-wrapper">
 
 				<label><?php echo esc_attr( $atts['title'] );?></label>
-				<input type="hidden" data-html-input="<?php echo  $html_code ;?>" id ="html-input">
-				<input itemprop="query-input" type="text" data-object-type="<?php echo esc_attr( $type );?>" id="wpms--input" placeholder="<?php echo esc_attr( $atts['placeholder'] );?>" data-rest-api=<?php echo esc_attr($atts['rest_api']);?> data-cat="<?php echo esc_attr($atts['category_slug']);?>">
-				<div id="wpms--loading" class="wpms--loading"><div class="wpms--loader"></div></div>
+				<input itemprop="query-input" type="text" data-object-type="<?php echo esc_attr( $type );?>" id="search-input" placeholder="<?php echo esc_attr( $atts['placeholder'] );?>" data-rest-api=<?php echo esc_attr($atts['rest_api']);?> data-cat="<?php echo esc_attr($atts['category_slug']);?>">
+				<div id="search-loading" class="search-loading"><div class="search-loader"></div></div>
 			</div>
 
 			<!-- results count -->
-			<div class="wpms--results-wrap">
+			<div class="search-results-wrap">
 
-				<span id="wpms--results"></span>
+				<span id="search-results"></span>
 
 			</div>
 
 			<!-- append searched results -->
-			<ul itemprop="target" id="wpms--post-list"></ul>
-			<div class="after-wrapper"></div>
+			<ul itemprop="target" id="result-list"></ul>
+			
+
+			<!-- append html input results -->
+			<div class="after-wrapper">
+				<?php echo html_entity_decode( $html_input );?>
+			</div>
 
 		</div>
 
@@ -73,9 +83,5 @@ class wpMultisiteSearchShortcode{
 
 		return ob_get_clean();
 	}
-
 }
-
-$multisearch_shortcode = wpMultisiteSearchShortcode::Instance();
-
-
+$remote_site_search_shortcode = wpRemoteSiteSearchShortcode::instance();

@@ -1,121 +1,111 @@
-(function( $, Backbone, _, undefined ) {
+(function( $, Backbone ) {
 
 	jQuery('document').ready( function( $ ){
 
-		var resultTemplate = $('#wpms--tmpl')
-		,	itemTemplate     = _.template( resultTemplate.html() )
-		,	main             = '#wpms'
-		,	postList		 = '#wpms--post-list'
-		,	postList         = $( main ).data('target') ? $( main ).data('target') : postList
-		,	showExcerpt      = $( main ).data('excerpt') ? 'enabled' : 'disabled'
-		,	results          = '#wpms--results'
-		,	loader           = '#wpms--loading'
-		,	input  			 = '#wpms--input'
-		,	helper           = '#wpms--helper'
-		,	helperText       = wpms_search_msg.helperText
-		,	helperSpan       = '<span id="wpms--helper">'+helperText+'</span>'
-		,	clear     		 = '<i id="wpms--clear-search" class="dashicons dashicons-dismiss"></i>'
-		,	clearItem        = '#wpms--clear-search'
-		,	hideClass        = 'wpms--hide'
-		,	showClass        = 'wpms--show'
-		,	timer
+		var finalTemplate = $('#rs-tmpl'),
+			outputTemplate   = _.template( finalTemplate.html() ),
+			wrapper          = '#search-wrapper',
+			resultList		 = '#result-list',
+			results          = '#search-results',
+			searchLoader     = '#search-loading',
+			searchInput  	 = '#search-input',
+			notice           = '#rs-helper',
+			noticeText       = rs_search_msg.least_char,
+			noticeSpan       = '<span id="rs-helper">'+noticeText+'</span>',
+			close     		 = '<i id="rs-clear-search" class="dashicons dashicons-dismiss"></i>',
+			clearList        = '#rs-clear-search',
+			time
 
-		$( postList ).addClass('wpms--empty');
+		$( resultList ).addClass('rs-empty');
 
-		$( input ).on('keyup keypress', function ( e ) {
+		$( searchInput ).on('keyup keypress', function ( e ) {
 
-			// previous timer -clear
-			clearTimeout(timer)
+			// previous time -clear
+			clearTimeout(time)
 
-			var key         = e.which
-			,	that        = this
-			,	val 		= $.trim( $(this).val() )
-			,	valEqual    = val == $(that).val()
-			,	notEmpty    = '' !== val
-			,	type        = $(this).data('object-type')
-			,	total       = $( main ).data('number')
-			,	rest_api 	= $(this).data('rest-api')
-			,	cat 		= $(this).data('cat')
-			,	url 		= rest_api+'/wp-json/wp/v2/'+type+'search='+val+'&filter[category_name]='+cat+'&per_page='+total
+			var key         = e.which,
+				that        = this,
+				val 		= $.trim( $(this).val() ),
+				valIs       = val == $(that).val(),
+				notEmpty    = '' !== val,
+				type        = $(this).data('object-type'),
+				max       = $( wrapper ).data('number'),
+				rest_api 	= $(this).data('rest-api'),
+				cat 		= $(this).data('cat'),
+				url 		= rest_api+'/wp-json/wp/v2/'+type+'search='+val+'&filter[category_name]='+cat+'&per_page='+max
 
 			// 600ms delay so we dont exectute excessively
-			
-			timer = setTimeout(function() {
+			time = setTimeout(function() {
 
 
 				// don't proceed if the value is <> or != to itself
-				if ( !valEqual && !notEmpty )
+				if ( !valIs && !notEmpty )
 					return false;
 
 				// when type only two characters?
-				if ( val.length == 2 && !$(helper).length ) {
+				if ( val.length == 2 && !$(notice).length ) {
 
-					$( input ).after( helperSpan );
+					$( searchInput ).after( noticeSpan );
 
 				}
 
 				// when type >= 3 characters
 				if ( val.length >= 3 || val.length >= 3 && 13 == key ) {
 					
-					// before request trigger					
-					$(document).trigger("before");
-
-
 					// escape or arrow keys blocked
-					if( blacklistedKeys( key ) )
+					if( blockKeys( key ) )
 						return false;
 
 					// loading effect
-					$( loader ).removeClass('wpms--hide').addClass('wpms--show');
+					$( searchLoader ).removeClass('rs-hide').addClass('rs-show');
 
 					// helpers removed
-					$( helper ).fadeOut().remove();
+					$( notice ).fadeOut().remove();
 
 					// remove close
-					destroyClose()
+					removeClose()
 
 					// request
 					var jqxhr = $.getJSON( url, function( response ) {
 						// remove current lists
-						$(postList).children().remove();
-						$(postList).removeClass('wpms--full').addClass('wpms--empty')
+						$(resultList).children().remove();
+						$(resultList).removeClass('rs-full').addClass('rs-empty')
 
 						// results 
-						$(results).parent().removeClass('wpms--hide').addClass('wpms--show');
+						$(results).parent().removeClass('rs-hide').addClass('rs-show');
 
 						// loading effect hide
-						$(loader).removeClass('wpms--show').addClass('wpms--hide');
+						$(searchLoader).removeClass('rs-show').addClass('rs-hide');
 
 						// count results & show
 						if ( response.length == 0 ) {
 
 							// no result found
-							$(results).text('No results found…').closest( main ).addClass('wpms--no-results');
+							$(results).text('No results found…').closest( wrapper ).addClass('rs-no-results');
 
 							// remove close
-							destroyClose();
+							removeClose();
 
 						} else {
 
 							// escape or arrow keys blocked
-							if( blacklistedKeys( key ) )
+							if( blockKeys( key ) )
 								return false;
 
 							// append close
-							if ( !$( clearItem ).length ) {
+							if ( !$( clearList ).length ) {
 
-								$(input).after( clear );
+								$(searchInput).after( close );
 							}
 
-							// total no. of results found
-							$(results).text( "We found "+response.length+" articles that may help:" ).closest( main ).removeClass('wpms--no-results');
+							// max no. of results found
+							$(results).text( "We found "+response.length+" articles that may help:" ).closest( wrapper ).removeClass('rs-no-results');
 							// each object in loop
 			                $.each( response, function ( i ) {
 
-
-			                    $(postList).append( itemTemplate( { post: response[i], excerpt: showExcerpt } ) )
-			                    .removeClass('wpms--empty')
-			                    .addClass('wpms--full');
+			                    $(resultList).append( outputTemplate( { post: response[i]} ) )
+			                    .removeClass('rs-empty')
+			                    .addClass('rs-full');
 
 			                });
 			            }
@@ -148,7 +138,7 @@
 		/**
 		*	search empty
 		*/
-		$( main ).on('click', clearItem, function(e){
+		$( wrapper ).on('click', clearList, function(e){
 
 			e.preventDefault();
 			destroySearch();
@@ -157,40 +147,34 @@
 		/**
 		*  destroy search on close button click
 		*/
-		function destroyClose(){
+		function removeClose(){
 
-			$( clearItem ).remove();
+			$( clearList ).remove();
 
 		}
 
 		/**
-		*	 destroy earch
+		*	 destroy search
 		*/
 		function destroySearch(){
 
-			$( postList ).children().remove();
-			$( input ).val('');
-			$( results ).parent().removeClass('wpms--show').addClass('wpms--hide');
-			$( postList ).removeClass('wpms--full').addClass('wpms--empty')
-			$( helper ).remove();
-			$('.after-wrapper').empty(); //remove html tag "before" trigger
-			$('.before-wrapper').empty(); //remove html tag "after" trigger
-			destroyClose()
+			$( resultList ).children().remove();
+			$( searchInput ).val('');
+			$( results ).parent().removeClass('rs-show').addClass('rs-hide');
+			$( resultList ).removeClass('rs-full').addClass('rs-empty')
+			$( notice ).remove();
+			$('.after-wrapper').fadeOut(); //remove html tag "before" trigger
+			removeClose()
 		}
 
 		/**
 		* 	Search not perform any operation on escape or arrow keys
 		*	@since 0.1
 		*/
-		function blacklistedKeys( key ){
-
+		function blockKeys( key ){
 			return 27 == key || 37 == key || 38 == key || 39 == key || 40 == key;
-
 		}
 
 	});
 
-
-
-
-})( jQuery, Backbone, _ );
+})( jQuery, Backbone);
