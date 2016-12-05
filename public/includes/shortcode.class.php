@@ -56,8 +56,6 @@ class wpRemoteSiteSearchShortcode{
 		$html_input = html_entity_decode( $atts['html_input'] );//append html after all results
 
 		ob_start();
-
-		var_dump($type);
 		?>
 		<!-- search box wrapper -->
 		<div id="search-wrapper" class="search-wrapper wrapper" data-number=<?php echo esc_attr($atts['max_results']); ?> >
