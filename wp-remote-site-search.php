@@ -22,7 +22,6 @@ require WP_REMOTE_SITE_SEARCH_DIR.'/public/includes/result-template.php';
 require WP_REMOTE_SITE_SEARCH_DIR.'/public/includes/shortcode.class.php';
 require WP_REMOTE_SITE_SEARCH_DIR.'/public/includes/assets.class.php';
 
-
 /* Register activation hook. */
 register_activation_hook( __FILE__, 'rs_admin_notice_activation_hook' );
 
