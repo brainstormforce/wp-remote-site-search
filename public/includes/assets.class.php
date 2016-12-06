@@ -41,7 +41,15 @@ class wpRemoteSiteSearchAssets
 
 		// wp remote_site_search script
 		wp_enqueue_script('rs-script', WP_REMOTE_SITE_SEARCH_URL.'/public/assets/js/multisite-search.js', array('jquery', 'underscore', 'backbone'), WP_REMOTE_SITE_SEARCH_VERSION, true);
-		wp_localize_script('rs-script','rs_search_msg', array('least_char' => __('Search must be at least 3 characters.','wp-remote-site-search')));
+
+		// Localize the script with new data
+			$messages_array = array(
+				'least_char' => __('Search must be at least 3 characters.','wp-remote-site-search'),
+				'no_result' => __('No results found…','wp-remote-site-search'),
+				'we_found' => __('We found','wp-remote-site-search'),
+				'found_msg' => __('articles that may help:','wp-remote-site-search'),
+			);
+			wp_localize_script( 'rs-script', 'rs_search_msg', $messages_array );
 
 		wp_enqueue_script('rs-trigger-script', WP_REMOTE_SITE_SEARCH_URL.'/public/assets/js/ms-trigger.js', array('jquery'), WP_REMOTE_SITE_SEARCH_VERSION, true);
 		

@@ -11,6 +11,9 @@
 			searchInput  	 = '#search-input',
 			notice           = '#rs-helper',
 			noticeText       = rs_search_msg.least_char,
+			noResult 		 = rs_search_msg.no_result,
+			weFound 		 = rs_search_msg.we_found,
+			foundMsg 		 = rs_search_msg.found_msg,
 			noticeSpan       = '<span id="rs-helper">'+noticeText+'</span>',
 			close     		 = '<i id="rs-clear-search" class="dashicons dashicons-dismiss"></i>',
 			clearList        = '#rs-clear-search',
@@ -36,7 +39,6 @@
 
 			// 600ms delay so we dont exectute excessively
 			time = setTimeout(function() {
-
 
 				// don't proceed if the value is <> or != to itself
 				if ( !valIs && !notEmpty )
@@ -81,7 +83,7 @@
 						if ( response.length == 0 ) {
 
 							// no result found
-							$(results).text('No results found…').closest( wrapper ).addClass('rs-no-results');
+							$(results).text(noResult).closest( wrapper ).addClass('rs-no-results');
 
 							// remove close
 							removeClose();
@@ -99,7 +101,7 @@
 							}
 
 							// max no. of results found
-							$(results).text( "We found "+response.length+" articles that may help:" ).closest( wrapper ).removeClass('rs-no-results');
+							$(results).text( weFound+" "+ response.length +" "+foundMsg).closest( wrapper ).removeClass('rs-no-results');
 							// each object in loop
 			                $.each( response, function ( i ) {
 
@@ -120,44 +122,35 @@
 					.fail(function() {
 					    console.log( "error" );
 					  });
-					
-
 				}
 
 			}, 600);
 
 			// destroy the search if value is empty
 			if ( val == '' ) {
-
 				destroySearch();
-
 			}
-
 		});
 
-		/**
+	   /**
 		*	search empty
 		*/
 		$( wrapper ).on('click', clearList, function(e){
-
 			e.preventDefault();
 			destroySearch();
 		});
 
-		/**
+	   /**
 		*  destroy search on close button click
 		*/
 		function removeClose(){
-
 			$( clearList ).remove();
-
 		}
 
-		/**
+	   /**
 		*	 destroy search
 		*/
 		function destroySearch(){
-
 			$( resultList ).children().remove();
 			$( searchInput ).val('');
 			$( results ).parent().removeClass('rs-show').addClass('rs-hide');
@@ -167,7 +160,7 @@
 			removeClose()
 		}
 
-		/**
+	   /**
 		* 	Search not perform any operation on escape or arrow keys
 		*	@since 0.1
 		*/

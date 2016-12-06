@@ -39,12 +39,11 @@ class wpRemoteSiteSearchShortcode{
 		$defaults = array(
 			'title'				=> __( 'How can we help?', 'wp-remote-site-search' ), // title for searcbox
 			'placeholder'		=> __( 'Search...', 'wp-remote-site-search' ), // placeholder
-			'rest_api'			=> '', //restapi url
+			'rest_api'			=> '', //rest-api url
 			'category_slug'		=> '', //category slug
 			'max_results'		=> 30, // return a certain number of search results
 			'html_input'		=>'', //html input to add after results
 			'type'				=> ''
-
 			);
 		$atts = shortcode_atts( $defaults, $atts );
 		if ($atts['type'] == '') {
@@ -62,32 +61,24 @@ class wpRemoteSiteSearchShortcode{
 
 			<!-- search input box -->
 			<div id="input-wrapper">
-
 				<label><?php echo esc_attr( $atts['title'] );?></label>
 				<input itemprop="query-input" type="text" data-object-type="<?php echo esc_attr( $type );?>" id="search-input" placeholder="<?php echo esc_attr( $atts['placeholder'] );?>" data-rest-api=<?php echo esc_attr($atts['rest_api']);?> data-cat="<?php echo esc_attr($atts['category_slug']);?>">
 				<div id="search-loading" class="search-loading"><div class="search-loader"></div></div>
 			</div>
-
 			<!-- results count -->
 			<div class="search-results-wrap">
-
 				<span id="search-results"></span>
-
 			</div>
-
 			<!-- append searched results -->
 			<ul itemprop="target" id="result-list"></ul>
-			
-
 			<!-- append html input results -->
 			<div class="after-wrapper">
 				<?php echo html_entity_decode( $html_input );?>
 			</div>
-
+			
 		</div>
 
 		<?php
-
 		return ob_get_clean();
 	}
 }
