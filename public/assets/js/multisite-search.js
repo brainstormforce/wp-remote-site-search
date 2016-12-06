@@ -14,6 +14,7 @@
 			noResult 		 = rs_search_msg.no_result,
 			weFound 		 = rs_search_msg.we_found,
 			foundMsg 		 = rs_search_msg.found_msg,
+			endPointError	 = rs_search_msg.end_point_error,
 			noticeSpan       = '<span id="rs-helper">'+noticeText+'</span>',
 			close     		 = '<i id="rs-clear-search" class="dashicons dashicons-dismiss"></i>',
 			clearList        = '#rs-clear-search',
@@ -120,7 +121,9 @@
 					
 					//request error
 					.fail(function() {
-					    console.log( "error" );
+					    console.log( endPointError );
+					    // loading effect hide
+						$(searchLoader).removeClass('rs-show').addClass('rs-hide');
 					  });
 				}
 

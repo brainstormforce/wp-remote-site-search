@@ -50,8 +50,8 @@ function rs_admin_notice(){
     if( get_transient( 'rs-admin-notice' ) ){
         ?>
         <div class="updated notice is-dismissible">
-            <p><?php _e('Thank you for using ','wp-remote-site-search'); ?><strong><?php _e('Wp Remote Site Search','wp-remote-site-search') ?></strong>.</p>
-            <p><?php _e('In order to use this plugin, Please install The','wp-remote-site-search')?><a href="https://wordpress.org/plugins/rest-api/" target="_blank"><?php _e(' WP REST API (V2)','wp-remote-site-search')?> </a><?php _e('on the remote site.','wp-remote-site-search') ?></p>
+            <p><?php _e('Thank you for using ','wp-remote-site-search'); ?><strong><?php _e('WP Remote Site Search','wp-remote-site-search') ?></strong>.</p>
+            <p><?php _e('In order to use this plugin, Please install ','wp-remote-site-search')?><a href="https://wordpress.org/plugins/rest-api/" target="_blank"><?php _e(' WP REST API (V2)','wp-remote-site-search')?> </a><?php _e('on the remote site.','wp-remote-site-search') ?></p>
         </div>
         <?php
         /* Delete transient, only display this notice once. */

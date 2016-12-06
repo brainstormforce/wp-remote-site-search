@@ -48,6 +48,7 @@ class wpRemoteSiteSearchAssets
 				'no_result' => __('No results found…','wp-remote-site-search'),
 				'we_found' => __('We found','wp-remote-site-search'),
 				'found_msg' => __('articles that may help:','wp-remote-site-search'),
+				'end_point_error' => __('Remote site does not have end point or does not have WP REST API (V2) installed','wp-remote-site-search')
 			);
 			wp_localize_script( 'rs-script', 'rs_search_msg', $messages_array );
 
