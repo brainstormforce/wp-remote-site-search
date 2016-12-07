@@ -66,6 +66,7 @@ class wpRemoteSiteSearchShortcode{
 				<div id="search-loading" class="search-loading"><div class="search-loader"></div></div>
 			</div>
 			<!-- results count -->
+			<div class="error-results-wrap"></div>
 			<div class="search-results-wrap">
 				<span id="search-results"></span>
 			</div>

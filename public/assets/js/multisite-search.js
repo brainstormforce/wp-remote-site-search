@@ -15,6 +15,7 @@
 			weFound 		 = rs_search_msg.we_found,
 			foundMsg 		 = rs_search_msg.found_msg,
 			endPointError	 = rs_search_msg.end_point_error,
+			errorDiv 		  =".error-results-wrap",
 			noticeSpan       = '<span id="rs-helper">'+noticeText+'</span>',
 			close     		 = '<i id="rs-clear-search" class="dashicons dashicons-dismiss"></i>',
 			clearList        = '#rs-clear-search',
@@ -36,7 +37,7 @@
 				max       = $( wrapper ).data('number'),
 				rest_api 	= $(this).data('rest-api'),
 				cat 		= $(this).data('cat'),
-				url 		= rest_api+'/wp-json/wp/v2/'+type+'search='+val+'&filter[category_name]='+cat+'&per_page='+max
+				url 		= rest_api+'/wp-json/wp/v2/'+type+'search='+val+'&filter[category_name]='+cat+'&per_page='+max+'&order=asc'
 
 			// 600ms delay so we dont exectute excessively
 			time = setTimeout(function() {
@@ -123,6 +124,7 @@
 					.fail(function() {
 					    console.log( endPointError );
 					    // loading effect hide
+					    $(errorDiv).text(endPointError);
 						$(searchLoader).removeClass('rs-show').addClass('rs-hide');
 					  });
 				}
@@ -159,6 +161,7 @@
 			$( results ).parent().removeClass('rs-show').addClass('rs-hide');
 			$( resultList ).removeClass('rs-full').addClass('rs-empty')
 			$( notice ).remove();
+			$(errorDiv).empty();
 			$('.after-wrapper').fadeOut(); //remove html tag "before" trigger
 			removeClose()
 		}

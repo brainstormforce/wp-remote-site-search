@@ -18,6 +18,10 @@
     right: 0
 }
 
+.error-results-wrap{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
 .search-results-wrap {
     position: absolute;
     margin-bottom: -30px;
