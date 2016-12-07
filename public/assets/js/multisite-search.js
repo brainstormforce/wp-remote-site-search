@@ -122,7 +122,6 @@
 					
 					//request error
 					.fail(function() {
-					    console.log( endPointError );
 					    // loading effect hide
 					    $(errorDiv).text(endPointError);
 						$(searchLoader).removeClass('rs-show').addClass('rs-hide');
