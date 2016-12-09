@@ -27,9 +27,9 @@ Here’s a list of shortcodes currently available in the wp-remote-site-search p
 
 	Title for the search box
 
-3.`[wp_remote_site_search category_slug="books,recipes"]`
+3.`[wp_remote_site_search category_id="1,2"]`
 
-	You can also pass "category_slug1,category_slug2" to search multiple posts from multiple categories.
+	You can also pass "category_id1,category_id2" to search multiple posts from multiple categories.
 
 4.`[wp_remote_site_search placeholder="Enter a search term."]`
 
@@ -51,7 +51,7 @@ Here’s a list of shortcodes currently available in the wp-remote-site-search p
 --
 Example:
 
-`[wp_remote_site_search rest_api="https://example.com" category_slug="recipes,books" type="books" title="How can we help?" placeholder="Have a question? Enter a search term." max_results="30" html_input="<button>Get In Touch!</button>"]`
+`[wp_remote_site_search rest_api="https://example.com" category_id="1,2" type="books" title="How can we help?" placeholder="Have a question? Enter a search term." max_results="30" html_input="<button>Get In Touch!</button>"]`
 
 == Installation ==
 
