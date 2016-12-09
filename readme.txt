@@ -1,7 +1,7 @@
-=== Plugin Name ===
+=== WP Remote Site Search ===
 Contributors: brainstormforce
-Donate link: https://www.brainstormforce.com/
 Tags: remote site search, live search, multisite search
+Donate link: https://www.brainstormforce.com/
 Requires at least: 4.6
 Tested up to: 4.7
 Stable tag: 4.3
@@ -10,9 +10,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 This plugin will display search results from any domain using REST API.
 
-
 == Description ==
-
 
 WP Remote Site Search is a search plugin for WordPress that returns results as the user types for what they are looking using REST API.
 
@@ -51,10 +49,9 @@ Here’s a list of shortcodes currently available in the wp-remote-site-search p
 --
 Example:
 
-`[wp_remote_site_search remote_url="https://example.com" category_id="1,2" type="books" title="How can we help?" placeholder="Have a question? Enter a search term." max_results="30" html_input="<button>Get In Touch!</button>"]`
+`[wp_remote_site_search remote_url="https://example.com" category_id="1,2" type="books" title="How can we help?" placeholder="Have a question? Enter a search term." max_results="30" html_input="<button> Get In Touch!</button>"]`
 
 == Installation ==
-
 1. Navigate to 'Add New' in the plugins dashboard
 2. Navigate to the 'Upload' area
 3. Select `wp-remote-site-search.zip` from your computer
@@ -62,13 +59,11 @@ Example:
 5. Activate the plugin in the Plugin dashboard
 
 == Frequently Asked Questions ==
-
 1. How it works? =
 It's a shortcode. Add [wp_remote_site_search remote_url="https://example.com"] to a page/post. See above for some options.
 
 2. What is required for this to work? =
 The remote site should have WordPress 4.7 or higher or Rest API (v2) plugin installed to get the search results.
-
 
 
 == Copyright ==
