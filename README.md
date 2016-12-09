@@ -12,7 +12,7 @@ Here’s a list of shortcodes currently available in the wp-remote-site-search p
 1.`[wp_remote_site_search rest_api="https://example.com"]`
 
 	URL from where you want to fetch the informaion
-	(The WP REST API (V2) plugin from the WordPress REST API Team must be installed on the source website. )
+	The remote site should have WordPress 4.7 or higher or Rest API (v2) plugin installed to get the search results.
 
 2.`[wp_remote_site_search title="How can we help?"]`
 

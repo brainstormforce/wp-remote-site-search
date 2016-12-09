@@ -40,7 +40,7 @@ class wpRemoteSiteSearchShortcode{
 			'title'				=> __( 'How can we help?', 'wp-remote-site-search' ), // title for searcbox
 			'placeholder'		=> __( 'Search...', 'wp-remote-site-search' ), // placeholder
 			'rest_api'			=> '', //rest-api url
-			'category_slug'		=> '', //category slug
+			'category_id'		=> '', //category id
 			'max_results'		=> 30, // return a certain number of search results
 			'html_input'		=>'', //html input to add after results
 			'type'				=> ''
@@ -52,6 +52,12 @@ class wpRemoteSiteSearchShortcode{
 		else{
 			$type = sprintf('%s?', trim( $atts['type'] ));//custom post type
 		}
+		if ($atts['category_id'] == '') {
+			$category_id = null;
+		}
+		else{
+			$category_id = sprintf('&categories=%s', trim( $atts['category_id'] ));//custom post type
+		}
 		$html_input = html_entity_decode( $atts['html_input'] );//append html after all results
 
 		ob_start();
@@ -62,7 +68,7 @@ class wpRemoteSiteSearchShortcode{
 			<!-- search input box -->
 			<div id="input-wrapper">
 				<label><?php echo esc_attr( $atts['title'] );?></label>
-				<input itemprop="query-input" type="text" data-object-type="<?php echo esc_attr( $type );?>" id="search-input" placeholder="<?php echo esc_attr( $atts['placeholder'] );?>" data-rest-api=<?php echo esc_attr($atts['rest_api']);?> data-cat="<?php echo esc_attr($atts['category_slug']);?>">
+				<input itemprop="query-input" type="text" data-object-type="<?php echo esc_attr( $type );?>" id="search-input" placeholder="<?php echo esc_attr( $atts['placeholder'] );?>" data-rest-api=<?php echo esc_attr($atts['rest_api']);?> data-cat="<?php echo esc_attr($category_id);?>">
 				<div id="search-loading" class="search-loading"><div class="search-loader"></div></div>
 			</div>
 			<!-- results count -->

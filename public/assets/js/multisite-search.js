@@ -37,7 +37,7 @@
 				max       = $( wrapper ).data('number'),
 				rest_api 	= $(this).data('rest-api'),
 				cat 		= $(this).data('cat'),
-				url 		= rest_api+'/wp-json/wp/v2/'+type+'search='+val+'&filter[category_name]='+cat+'&per_page='+max+'&order=asc'
+				url 		= rest_api+'/wp-json/wp/v2/'+type+'search='+val+cat+'&per_page='+max+'&order=asc'
 
 			// 600ms delay so we dont exectute excessively
 			time = setTimeout(function() {

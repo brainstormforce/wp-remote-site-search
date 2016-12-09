@@ -7,6 +7,7 @@
  * @copyright 2016 Brainstorm Force
  *
  * Plugin Name:       WP Remote Site Search
+ * Author: 			  Brainstorm Force
  * Plugin URI:        https://www.brainstormforce.com/
  * Description:       A Multisite live search plugin that utilizes the WP REST API
  * Version:           0.1
