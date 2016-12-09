@@ -77,4 +77,4 @@ WP Remote Site Search bundles the following third-party resources:
 
 WP Live Search
 Licenses: GNU GPL, Version 2 (or later)
-Source: https://wordpress.org/plugins/wp-search-live/
+Credits https://wordpress.org/plugins/wp-search-live/
