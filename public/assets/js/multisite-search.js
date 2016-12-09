@@ -35,9 +35,9 @@
 				notEmpty    = '' !== val,
 				type        = $(this).data('object-type'),
 				max       = $( wrapper ).data('number'),
-				rest_api 	= $(this).data('rest-api'),
+				remote_url 	= $(this).data('remote-url'),
 				cat 		= $(this).data('cat'),
-				url 		= rest_api+'/wp-json/wp/v2/'+type+'search='+val+cat+'&per_page='+max+'&order=asc'
+				url 		= remote_url+'/wp-json/wp/v2/'+type+'search='+val+cat+'&per_page='+max+'&orderby=relevance&order=asc'
 
 			// 600ms delay so we dont exectute excessively
 			time = setTimeout(function() {

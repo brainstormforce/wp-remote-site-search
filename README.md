@@ -9,7 +9,7 @@ WP Remote Site Search is a search plugin for WordPress that returns results as t
 
 Here’s a list of shortcodes currently available in the wp-remote-site-search plugin.
 
-1.`[wp_remote_site_search rest_api="https://example.com"]`
+1.`[wp_remote_site_search remote_url="https://example.com"]`
 
 	URL from where you want to fetch the informaion
 	The remote site should have WordPress 4.7 or higher or Rest API (v2) plugin installed to get the search results.
@@ -42,7 +42,7 @@ Here’s a list of shortcodes currently available in the wp-remote-site-search p
 --
 Example:
 
-`[wp_remote_site_search rest_api="https://example.com" category_id="1,2" type="books" title="How can we help?" placeholder="Have a question? Enter a search term." max_results="30" html_input="<button>Get In Touch!</button>"]`
+`[wp_remote_site_search remote_url="https://example.com" category_id="1,2" type="books" title="How can we help?" placeholder="Have a question? Enter a search term." max_results="30" html_input="<button>Get In Touch!</button>"]`
 
 # Installation
 
@@ -55,7 +55,7 @@ Example:
 # Frequently Asked Questions
 
 1. How it works? =
-It's a shortcode. Add [wp_remote_site_search rest_api="https://example.com"] to a page/post. See above for some options.
+It's a shortcode. Add [wp_remote_site_search remote_url="https://example.com"] to a page/post. See above for some options.
 
 2. What is required for this to work? =
 The remote site should have WordPress 4.7 or higher or Rest API (v2) plugin installed to get the search results.

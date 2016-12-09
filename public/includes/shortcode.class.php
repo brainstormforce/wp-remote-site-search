@@ -39,7 +39,7 @@ class wpRemoteSiteSearchShortcode{
 		$defaults = array(
 			'title'				=> __( 'How can we help?', 'wp-remote-site-search' ), // title for searcbox
 			'placeholder'		=> __( 'Search...', 'wp-remote-site-search' ), // placeholder
-			'rest_api'			=> '', //rest-api url
+			'remote_url'		=> '', //remote url
 			'category_id'		=> '', //category id
 			'max_results'		=> 30, // return a certain number of search results
 			'html_input'		=>'', //html input to add after results
@@ -68,7 +68,7 @@ class wpRemoteSiteSearchShortcode{
 			<!-- search input box -->
 			<div id="input-wrapper">
 				<label><?php echo esc_attr( $atts['title'] );?></label>
-				<input itemprop="query-input" type="text" data-object-type="<?php echo esc_attr( $type );?>" id="search-input" placeholder="<?php echo esc_attr( $atts['placeholder'] );?>" data-rest-api=<?php echo esc_attr($atts['rest_api']);?> data-cat="<?php echo esc_attr($category_id);?>">
+				<input itemprop="query-input" type="text" data-object-type="<?php echo esc_attr( $type );?>" id="search-input" placeholder="<?php echo esc_attr( $atts['placeholder'] );?>" data-remote-url=<?php echo esc_attr($atts['remote_url']);?> data-cat="<?php echo esc_attr($category_id);?>">
 				<div id="search-loading" class="search-loading"><div class="search-loader"></div></div>
 			</div>
 			<!-- results count -->
