@@ -34,6 +34,7 @@ class wpRemoteSiteSearchShortcode{
 	*	@since   0.1
 	*
 	*/
+
 	public function shortcode( $atts ) {
 
 		$defaults = array(

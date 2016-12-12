@@ -118,15 +118,12 @@
 
 #result-list a:hover .rs-item-title{
 	color: inherit;
-	background-color: none;
+	background-color: inherit;
 }
 
 .rs-item-title {
-    margin: 5px auto;
-    width: auto;
-    font-size: 18px;
-    line-height: 20px;
-    color: inherit;
+   color: inherit;
+   line-height: 1.5;
 }
 
 .rs-item-image+.rs-item-title-wrap+.rs-item-excerpt {
@@ -135,7 +132,6 @@
 
 .rs-item-excerpt {
     font-family: inherit;
-    font-size: 14px;
     line-height: 18px;
     color: #444
 }
@@ -159,7 +155,6 @@
 }
 
 #search-wrapper.rs-style-compact .rs-item-title {
-    font-size: 14px;
     line-height: 16px
 }
 
@@ -175,7 +170,6 @@
 #search-wrapper.rs-style-compact #search-input {
     height: 30px;
     padding: 4px 7px;
-    font-size: 15px;
     line-height: 18px;
     border-radius: 2px
 }
@@ -205,7 +199,6 @@
     z-index: -1;
     right: 40px;
     top: 6px;
-    font-size: 13px;
     padding: 3px 8px;
     background: #d8d8d8;
     color: white;
@@ -222,7 +215,6 @@
 }
 
 .search-results-style-inside.rs-style-compact .search-results-wrap {
-    font-size: 12px;
     top: 4px;
     padding: 1px 6px;
     right: 33px
@@ -244,7 +236,6 @@
     margin-bottom: .5rem;
     cursor: pointer;
     color: #717f86;
-    font-size: 1em;
 }
 .search-wrapper.wrapper #search-input{
     padding: .95rem;
