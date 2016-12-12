@@ -47,7 +47,7 @@
     padding: 10px;
     background: #F8F8F8;
     border: 1px solid #d8d8d8;
-    color: #444
+    color: inherit;
 }
 
 #search-input:focus {
@@ -133,7 +133,7 @@
 .rs-item-excerpt {
     font-family: inherit;
     line-height: 18px;
-    color: #444
+    color: inherit;
 }
 
 .rs-item-excerpt p {
@@ -201,7 +201,7 @@
     top: 6px;
     padding: 3px 8px;
     background: #d8d8d8;
-    color: white;
+    color: inherit;
     border-radius: 2px;
     font-family: inherit;
 }
@@ -235,11 +235,11 @@
     display: block;
     margin-bottom: .5rem;
     cursor: pointer;
-    color: #717f86;
+    color: inherit;
 }
 .search-wrapper.wrapper #search-input{
     padding: .95rem;
-    color: #717f86;
+    color: inherit;
     background: #fff;
     border: 2px solid #f4f7f8;
     line-height: 1.3;
@@ -251,7 +251,7 @@
     display: block;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    color: #717f86;
+    color: inherit;
 }
 
 
