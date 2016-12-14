@@ -8,7 +8,6 @@ WP Remote Site Search is a search plugin for WordPress that returns results as t
 
 
 Here’s a list of shortcodes currently available in the wp-remote-site-search plugin.
-
 1.`[wp_remote_site_search remote_url="https://example.com"]`
 
 	URL from where you want to fetch the informaion
@@ -22,27 +21,31 @@ Here’s a list of shortcodes currently available in the wp-remote-site-search p
 
 	You can also pass "category_id1,category_id2" to search multiple posts from multiple categories.
 
-4.`[wp_remote_site_search placeholder="Enter a search term."]`
+4.`[wp_remote_site_search category_id="1,2" sub_categories="true"]`
+
+	You can also get all reslts from categories (category_id1, category_id2) and their respective subcategories by setting sub_categories="true".
+
+5.`[wp_remote_site_search placeholder="Enter a search term."]`
 
 	The text displayed in the search box placeholder. Default is "Search...".
 
-5.`[wp_remote_site_search type = "books"]`
+6.`[wp_remote_site_search type = "books"]`
 
 	Default type is posts,
 	You can add custom post type also.
 
-6.`[wp_remote_site_search max_results="50"]`
+7.`[wp_remote_site_search max_results="50"]`
 
 	Total Number of results you want to display.
 	(default max_results is 30)
 
-7.`[wp_remote_site_search html_input = "<button> Get In Touch!</button>"]`
+8.`[wp_remote_site_search html_input = "<button> Get In Touch!</button>"]`
 
 	Append html after all results get displyed.
 --
 Example:
 
-`[wp_remote_site_search remote_url="https://example.com" category_id="1,2" type="books" title="How can we help?" placeholder="Have a question? Enter a search term." max_results="30" html_input="<button>Get In Touch!</button>"]`
+`[wp_remote_site_search remote_url="https://example.com" category_id="1,2" sub_categories="true" type="books" title="How can we help?" placeholder="Have a question? Enter a search term." max_results="30" html_input="<button>Get In Touch!</button>"]`
 
 # Installation
 

@@ -19,10 +19,66 @@
 			noticeSpan       = '<span id="rs-helper">'+noticeText+'</span>',
 			close     		 = '<i id="rs-clear-search" class="dashicons dashicons-dismiss"></i>',
 			clearList        = '#rs-clear-search',
+			categoriesList 	 = [],
+			allCategoriesList =[],
+			catArray = [],
+			secondCatArray = [],
+			categories ,
+			cat 		= $(searchInput).data('cat'),
+			sub_cat 	= $(searchInput).data('sub-cat'),
+			remote_url 	= $(searchInput).data('remote-url'),
 			time
 
 		$( resultList ).addClass('rs-empty');
+		
 
+		/**
+		 * get sub categories
+		 * 
+		 */
+		if (sub_cat == true && cat != '') {
+		// if multiple categories
+			if( cat.toString().indexOf(',') != -1 ){
+				$.each(cat.split(','), function(index,value){
+					// parentId = this;
+					categoriesList.push(value);
+					catArray.push($.getJSON(remote_url+'/wp-json/wp/v2/categories?parent='+value, function( response ) {
+					$.each( response, function ( i ) {
+						categoriesList.push(response[i].id);
+					})
+					}).then(function() {})
+					)
+				});
+				$.when.apply($, catArray).then(function() {
+					allCategoriesList = $.unique(categoriesList).join(',');
+					categories  = "&categories="+allCategoriesList;
+					})
+				}
+				else{
+					// if single category
+					categoriesList.push(cat);
+					var jqxhr = $.getJSON(remote_url+'/wp-json/wp/v2/categories?parent='+cat, function( response ) {
+						$.each( response, function ( i ) {
+							categoriesList.push(response[i].id);
+						})
+					}).done(function() {
+						// get all sub categories in an array
+						allCategoriesList = categoriesList.join(',');
+						categories  = "&categories="+allCategoriesList;
+					})
+				} 
+		}
+		else if (cat != '') {
+			categories  = "&categories="+cat;
+		}else{
+			categories = '';
+		}
+
+
+		/**
+		 * Search
+		 * 
+		 */
 		$( searchInput ).on('keyup keypress', function ( e ) {
 
 			// previous time -clear
@@ -34,10 +90,8 @@
 				valIs       = val == $(that).val(),
 				notEmpty    = '' !== val,
 				type        = $(this).data('object-type'),
-				max       = $( wrapper ).data('number'),
-				remote_url 	= $(this).data('remote-url'),
-				cat 		= $(this).data('cat'),
-				url 		= remote_url+'/wp-json/wp/v2/'+type+'search='+val+cat+'&per_page='+max+'&orderby=relevance&order=asc'
+				max         = $( wrapper ).data('number'),
+				url 		= remote_url+'/wp-json/wp/v2/'+type+'search='+val+categories+'&per_page='+max+'&orderby=relevance&order=asc'
 
 			// 600ms delay so we dont exectute excessively
 			time = setTimeout(function() {
@@ -67,8 +121,8 @@
 					$( notice ).fadeOut().remove();
 
 					// remove close
-					removeClose()
-
+					removeClose();
+					
 					// request
 					var jqxhr = $.getJSON( url, function( response ) {
 						// remove current lists
@@ -114,6 +168,7 @@
 			                });
 			            }
 					})
+
 					
 					// complete request trigger
 					.done(function() {
@@ -126,6 +181,7 @@
 					    $(errorDiv).text(endPointError);
 						$(searchLoader).removeClass('rs-show').addClass('rs-hide');
 					  });
+					// }
 				}
 
 			}, 600);
