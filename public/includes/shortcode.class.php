@@ -61,6 +61,12 @@ class wpRemoteSiteSearchShortcode{
 		}
 		$html_input = html_entity_decode( $atts['html_input'] );//append html after all results
 
+		/**
+		 * Filter #html_input
+		 * @var String
+		 */
+		$html_input = apply_filters( 'wp_remote_site_search_html_input', $html_input );
+
 		ob_start();
 		?>
 		<!-- search box wrapper -->
