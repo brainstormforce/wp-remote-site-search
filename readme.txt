@@ -1,12 +1,13 @@
 === WP Remote Site Search ===
-Contributors: brainstormforce
+Contributors: brainstormforce, rushijagani
+Donate link: https://www.brainstormforce.com/payment/
+Requires at least: 4.4
 Tags: remote site search, live search, multisite search
-Donate link: https://www.brainstormforce.com/
-Requires at least: 4.6
+Stable tag: 1.0.0
 Tested up to: 4.7
-Stable tag: 4.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
 
 This plugin will display search results from any domain using REST API.
 
@@ -61,6 +62,13 @@ Example:
 3. Select `wp-remote-site-search.zip` from your computer
 4. Click 'Install Now'
 5. Activate the plugin in the Plugin dashboard
+
+
+== Changelog==
+
+1.0.0
+Initial release
+
 
 == Frequently Asked Questions ==
 1. How it works? =
