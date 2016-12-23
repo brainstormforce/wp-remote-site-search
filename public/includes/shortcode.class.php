@@ -117,6 +117,18 @@ class wpRemoteSiteSearchShortcode{
 		 */
 		$sub_categories = apply_filters( 'wp_remote_site_search_sub_categories', $sub_categories );		
 
+		/**
+		 * Filter #html_input
+		 * @var String
+		 */
+		$html_input = apply_filters( 'wp_remote_site_search_html_input', $html_input );
+
+		/**
+		 * Filter $category_id
+		 * @var String, Comma separated list of category ids
+		 */
+		$category_id = apply_filters( 'wp_remote_site_search_category_id', $category_id );
+
 		ob_start();
 		?>
 		<!-- search box wrapper -->
