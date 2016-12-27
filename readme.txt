@@ -78,9 +78,7 @@ It's a shortcode. Add [wp_remote_site_search remote_url="https://example.com"] t
 The remote site should have WordPress 4.7 or higher or Rest API (v2) plugin installed to get the search results.
 
 
-== Copyright ==
-
-WP Remote Site Search bundles the following third-party resources:
+== Credits ==
 
 WP Live Search
 Licenses: GNU GPL, Version 2 (or later)
