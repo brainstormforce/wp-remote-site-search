@@ -9,11 +9,11 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 
-This plugin will display search results from any domain using REST API.
+Search any WordPress site's data using WP REST API.
 
 == Description ==
 
-WP Remote Site Search is a search plugin for WordPress that returns results as the user types for what they are looking using REST API.
+WP Remote Site Search is a search plugin for WordPress that returns any WordPress site's data using REST API.
 
 Here’s a list of shortcodes currently available in the wp-remote-site-search plugin.
 
@@ -67,6 +67,7 @@ Example:
 == Changelog==
 
 1.0.0
+
 Initial release
 
 
