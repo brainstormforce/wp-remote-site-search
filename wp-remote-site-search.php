@@ -11,7 +11,7 @@ Text Domain: wp-remote-site-search
 */
 
 // plugin constants
-define('WP_REMOTE_SITE_SEARCH_VERSION', '0.1');
+define('WP_REMOTE_SITE_SEARCH_VERSION', '1.0.0');
 define('WP_REMOTE_SITE_SEARCH_DIR', plugin_dir_path( __FILE__ ));
 define('WP_REMOTE_SITE_SEARCH_URL', plugins_url( '', __FILE__ ));
 // plugin functionality files

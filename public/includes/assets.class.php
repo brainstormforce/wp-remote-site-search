@@ -31,7 +31,7 @@ class wpRemoteSiteSearchAssets
 		add_action('wp_enqueue_scripts',	array($this,'remote_site_search_styles'), 99);
 
 		// include plugin links class
-		require_once( WP_REMOTE_SITE_SEARCH_DIR. '/public/includes/class-plugin-links.php' );
+		require_once( WP_REMOTE_SITE_SEARCH_DIR. '/public/includes/plugin-links-class.php' );
 
 		// setup plugin links
 		$plugin_links = new WRSS_Links();

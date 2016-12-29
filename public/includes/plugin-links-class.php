@@ -17,7 +17,7 @@ class WRSS_Links {
 	 * @return array
 	 */
 	public function insert_links( $links ) {
-		array_unshift( $links, '<a href="http://docs.sharkz.in" target="_blank" style="color:#000;font-weight:bold;">' . __( 'Description', 'wp-remote-site-search' ) . '</a>' );
+		array_unshift( $links, '<a href="http://docs.sharkz.in/wp-remote-site-search/" target="_blank" style="color:#000;font-weight:bold;">' . __( 'Plugin Documentation', 'wp-remote-site-search' ) . '</a>' );
 		return $links;
 	}
 
