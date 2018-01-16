@@ -1,10 +1,19 @@
-# wp-remote-site-search
-This plugin will display search results from any domain using WP REST API.
+# WP Remote Site Search #
+**Contributors:** brainstormforce, rushijagani  
+**Donate link:** https://www.brainstormforce.com/payment/  
+**Requires at least:** 4.4  
+**Tags:** remote site search, live search, multisite search  
+**Stable tag:** 1.0.0  
+**Tested up to:** 4.8.1  
+**License:** GPLv2 or later  
+**License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
 
-# Description 
+Search any WordPress site's data using WP REST API.
 
-WP Remote Site Search is a search plugin for WordPress that returns any WordPress site's data using REST API.
+## Description ##
+
+WP Remote Site Search is a search plugin for WordPress that returns any WordPress site's data using WP REST API.
 
 Basic Usage
 
@@ -13,7 +22,7 @@ Add the shortcode [wp_remote_site_search] to a page or something
 
 Options
 
-Here’s a list of shortcodes currently available in the wp-remote-site-search plugin.
+Here’s a list of shortcodes currently available in the WP Remote Site Search plugin.
 
 1.`remote_url="https://example.com"`
 
@@ -55,19 +64,31 @@ Example:
 `[wp_remote_site_search remote_url="https://example.com" category_id="1,2" sub_categories="true" type="books" title="How can we help?" placeholder="Have a question? Enter a search term." max_results="30" html_input="<button>Get In Touch!</button>"]`
 
 
-# Installation
-
+## Installation ##
 1. Navigate to 'Add New' in the plugins dashboard
 2. Navigate to the 'Upload' area
 3. Select `wp-remote-site-search.zip` from your computer
 4. Click 'Install Now'
 5. Activate the plugin in the Plugin dashboard
 
-# Frequently Asked Questions
 
+## Changelog##
+
+1.0.0
+
+Initial release
+
+
+## Frequently Asked Questions ##
 1. How it works? =
 It's a shortcode. Add [wp_remote_site_search remote_url="https://example.com"] to a page/post. See above for some options.
 
 2. What is required for this to work? =
 The remote site should have WordPress 4.7 or higher or Rest API (v2) plugin installed to get the search results.
 
+
+## Credits ##
+
+WP Live Search
+Licenses: GNU GPL, Version 2 (or later)
+Credits https://wordpress.org/plugins/wp-search-live/
