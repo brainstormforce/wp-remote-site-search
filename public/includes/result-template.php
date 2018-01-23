@@ -12,10 +12,12 @@ if ( !function_exists( 'rs_result_templates' ) ):
 		?>
 			<!-- Remote Site Search results-->
 			<script type="text/html" id="rs-tmpl">
+				<?php // @codingStandardsIgnoreStart ?>
 				<li id="rs-item-<%= post.id %>" class="rs-item">
-					<a href="<%= post.link %>" target="_blank"class="rs-link">
+					<a href="<%= post.link %>" target="_blank"class="rs-link"> 
 						<div class="rs-item-title-wrap">
 							<span class="rs-item-title"><%= post.title.rendered %></span>
+							<?php // @codingStandardsIgnoreEnd ?>
 						</div>
 					</a>
 				</li>
