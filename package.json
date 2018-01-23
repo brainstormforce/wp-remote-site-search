@@ -1,6 +1,6 @@
 {
   "name": "wp-remote-site-search",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Search any WordPress site's data using WP REST API.",
   "main": "Gruntfile.js",
   "repository": {

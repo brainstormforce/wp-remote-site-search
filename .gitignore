@@ -11,7 +11,7 @@ node_modules/
 *.map
 
 # Skip package file from versoning
-astra-theme.zip
+wp-remote-site-search.zip
 
 # ignore git inside subproject
 admin/bsf-core/.git
@@ -21,7 +21,7 @@ phpcs-summary.log
 phpcs-full.log
 
 # Org Package
-astra
+wp-remote-site-search
 *.zip
 
 # Ignore brainstorm updater.
