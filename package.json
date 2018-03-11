@@ -1,6 +1,6 @@
 {
   "name": "wp-remote-site-search",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Search any WordPress site's data using WP REST API.",
   "main": "Gruntfile.js",
   "repository": {
@@ -10,8 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-wp-i18n": "~0.5.0",
-    "grunt-wp-readme-to-markdown": "~1.0.0"
+    "grunt": "~1.0.2",
+    "grunt-wp-i18n": "~1.0.2",
+    "grunt-wp-readme-to-markdown": "~2.0.1"
   }
 }
