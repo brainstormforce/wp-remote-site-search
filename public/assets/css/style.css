@@ -150,7 +150,8 @@
 }
 
 @media (max-width: 768px) {
-    #rs-clear-search {
+    #rs-clear-search,
+    .search-loading {
         right: -15px;
         top: -25px;
     }
