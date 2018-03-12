@@ -149,6 +149,13 @@
     z-index: 1
 }
 
+@media (max-width: 768px) {
+    #rs-clear-search {
+        right: -15px;
+        top: -25px;
+    }
+}
+
 #rs-clear-search:hover {
     color: inherit;
     cursor: pointer
