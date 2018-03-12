@@ -54,7 +54,7 @@ class wpRemoteSiteSearchAssets
 		// Localize the script with new data
 			$messages_array = array(
 				'least_char' => __('Search must be at least 3 characters.','wp-remote-site-search'),
-				'no_result' => __('No results found…','wp-remote-site-search'),
+				'no_result' => __('No results found. Try again with different words?','wp-remote-site-search'),
 				'we_found' => __('We found','wp-remote-site-search'),
 				'found_msg' => __('articles that may help:','wp-remote-site-search'),
 				'end_point_error' => __('The remote site should have WordPress 4.7 or higher or Rest API (v2) plugin installed to get the search results.', 'wp-remote-site-search')
