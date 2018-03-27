@@ -49,7 +49,7 @@ class wpRemoteSiteSearchAssets
 	public function remote_site_search_scripts(){
 
 		// wp remote_site_search script
-		wp_enqueue_script('rs-script', WP_REMOTE_SITE_SEARCH_URL.'/public/assets/js/multisite-search.js', array('jquery', 'underscore', 'backbone'), WP_REMOTE_SITE_SEARCH_VERSION, true);
+		wp_register_script('rs-script', WP_REMOTE_SITE_SEARCH_URL.'/public/assets/js/multisite-search.js', array('jquery', 'underscore', 'backbone'), WP_REMOTE_SITE_SEARCH_VERSION, true);
 
 		// Localize the script with new data
 			$messages_array = array(
@@ -61,7 +61,7 @@ class wpRemoteSiteSearchAssets
 			);
 			wp_localize_script( 'rs-script', 'rs_search_msg', $messages_array );
 
-		wp_enqueue_script('rs-trigger-script', WP_REMOTE_SITE_SEARCH_URL.'/public/assets/js/ms-trigger.js', array('jquery'), WP_REMOTE_SITE_SEARCH_VERSION, true);
+		wp_register_script('rs-trigger-script', WP_REMOTE_SITE_SEARCH_URL.'/public/assets/js/ms-trigger.js', array('jquery'), WP_REMOTE_SITE_SEARCH_VERSION, true);
 		
 	}
 
@@ -73,7 +73,7 @@ class wpRemoteSiteSearchAssets
 	public function remote_site_search_styles() {
 
 			// wp remote_site_search style
-			wp_enqueue_style('rs-style', WP_REMOTE_SITE_SEARCH_URL.'/public/assets/css/style.css', WP_REMOTE_SITE_SEARCH_VERSION );
+			wp_register_style('rs-style', WP_REMOTE_SITE_SEARCH_URL.'/public/assets/css/style.css', WP_REMOTE_SITE_SEARCH_VERSION );
 
 	}
 
