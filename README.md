@@ -3,7 +3,7 @@
 **Donate link:** https://www.brainstormforce.com/payment/  
 **Requires at least:** 4.4  
 **Tags:** remote site search, live search, multisite search  
-**Stable tag:** 1.0.2  
+**Stable tag:** 1.0.3  
 **Tested up to:** 4.9.4  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
@@ -73,6 +73,9 @@ Example:
 
 
 ## Changelog##
+
+### 1.0.3 ###
+- Improvements: Enqueue scripts only where shortcode is used.
 
 ### 1.0.2 ###
 - Search result design improvements.
