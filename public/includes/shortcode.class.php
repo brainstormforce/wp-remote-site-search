@@ -37,6 +37,10 @@ class wpRemoteSiteSearchShortcode{
 
 	public function shortcode( $atts ) {
 
+		wp_enqueue_script( 'rs-script');
+		wp_enqueue_script( 'rs-trigger-script');
+		wp_enqueue_style( 'rs-style');
+
 		$defaults = array(
 			'title'				=> __( 'How can we help?', 'wp-remote-site-search' ), // title for searcbox
 			'placeholder'		=> __( 'Search...', 'wp-remote-site-search' ), // placeholder
