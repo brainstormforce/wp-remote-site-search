@@ -1,6 +1,6 @@
 # WP Remote Site Search #
-**Contributors:** [brainstormforce](https://profiles.wordpress.org/brainstormforce), [rushijagani](https://profiles.wordpress.org/rushijagani)  
-**Donate link:** https://www.brainstormforce.com/payment/  
+**Contributors:** [brainstormforce](https://profiles.wordpress.org/brainstormforce) 
+**Donate link:** https://www.paypal.me/BrainstormForce
 **Requires at least:** 4.4  
 **Tags:** remote site search, live search, multisite search  
 **Stable tag:** 1.0.3  
