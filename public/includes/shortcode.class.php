@@ -64,7 +64,7 @@ class wpRemoteSiteSearchShortcode{
 		else{
 			$category_id = sprintf('%s', trim( $atts['category_id'] ));//custom post type
 		}
-		$html_input = html_entity_decode( $atts['html_input'] );//append html after all results
+		$html_input = html_entity_decode( $atts['html_input'] ); // phpcs:ignore PHPCompatibility.ParameterValues.NewHTMLEntitiesEncodingDefault.NotSet
 		$title = $atts['title'];
 		$placeholder = $atts['placeholder'];
 		$remote_url = $atts['remote_url'];
@@ -141,7 +141,7 @@ class wpRemoteSiteSearchShortcode{
 			<ul itemprop="target" id="result-list"></ul>
 			<!-- append html input results -->
 			<div class="after-wrapper">
-				<?php echo html_entity_decode( $html_input );?>
+				<?php echo html_entity_decode( $html_input ); // phpcs:ignore PHPCompatibility.ParameterValues.NewHTMLEntitiesEncodingDefault.NotSet ?>
 			</div>
 			
 		</div>
