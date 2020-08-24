@@ -4,7 +4,7 @@ Donate link: https://www.paypal.me/BrainstormForce
 Requires at least: 4.4
 Tags: remote site search, live search, multisite search
 Stable tag: 1.0.3
-Tested up to: 5.1
+Tested up to: 5.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
