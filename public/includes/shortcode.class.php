@@ -64,7 +64,7 @@ class wpRemoteSiteSearchShortcode{
 		else{
 			$category_id = sprintf('%s', trim( $atts['category_id'] ));//custom post type
 		}
-		$html_input = html_entity_decode( $atts['html_input'] );//append html after all results
+		$html_input = html_entity_decode( $atts['html_input'] ); // phpcs:ignore PHPCompatibility.ParameterValues.NewHTMLEntitiesEncodingDefault.NotSet
 		$title = $atts['title'];
 		$placeholder = $atts['placeholder'];
 		$remote_url = $atts['remote_url'];
@@ -129,7 +129,7 @@ class wpRemoteSiteSearchShortcode{
 			<!-- search input box -->
 			<div id="input-wrapper">
 				<label><?php echo esc_attr( $atts['title'] );?></label>
-				<input itemprop="query-input" type="text" data-object-type="<?php echo esc_attr( $type );?>" id="search-input" placeholder="<?php echo esc_attr( $atts['placeholder'] );?>" data-remote-url=<?php echo esc_attr($atts['remote_url']);?> data-cat="<?php echo esc_attr($category_id);?>" data-sub-cat="<?php echo esc_attr($atts['sub_categories']);?>">
+				<input itemprop="query-input" type="text" data-object-type="<?php echo esc_attr( $type );?>" id="search-input" placeholder="<?php echo esc_attr( $atts['placeholder'] );?>" data-remote-url="<?php echo esc_attr($atts['remote_url']);?>" data-cat="<?php echo esc_attr($category_id);?>" data-sub-cat="<?php echo esc_attr($atts['sub_categories']);?>">
 				<div id="search-loading" class="search-loading"><div class="search-loader"></div></div>
 			</div>
 			<!-- results count -->
@@ -141,7 +141,7 @@ class wpRemoteSiteSearchShortcode{
 			<ul itemprop="target" id="result-list"></ul>
 			<!-- append html input results -->
 			<div class="after-wrapper">
-				<?php echo html_entity_decode( $html_input );?>
+				<?php echo html_entity_decode( $html_input ); // phpcs:ignore PHPCompatibility.ParameterValues.NewHTMLEntitiesEncodingDefault.NotSet ?>
 			</div>
 			
 		</div>
