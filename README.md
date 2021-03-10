@@ -3,8 +3,8 @@
 **Donate link:** https://www.paypal.me/BrainstormForce
 **Requires at least:** 4.4  
 **Tags:** remote site search, live search, multisite search  
-**Stable tag:** 1.0.4  
-**Tested up to:** 5.6
+**Stable tag:** 1.0.5  
+**Tested up to:** 5.7
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -73,6 +73,9 @@ Example:
 
 
 ## Changelog##
+
+### 1.0.5 ###
+- Improvement - Compatibility to WordPress 5.7.
 
 ### 1.0.4 ###
 - Improvement - Compatibility to WordPress 5.6.
