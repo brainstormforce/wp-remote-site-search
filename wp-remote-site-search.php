@@ -17,4 +17,4 @@ define('WP_REMOTE_SITE_SEARCH_URL', plugins_url( '', __FILE__ ));
 // plugin functionality files
 require WP_REMOTE_SITE_SEARCH_DIR.'/public/includes/result-template.php';
 require WP_REMOTE_SITE_SEARCH_DIR. '/public/includes/shortcode.class.php';
-require WP_REMOTE_SITE_SEARCH_DIR.'/public/includes/assets.class.php'; 
+require WP_REMOTE_SITE_SEARCH_DIR.'/public/includes/assets.class.php';
