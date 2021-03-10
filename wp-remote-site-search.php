@@ -6,12 +6,12 @@ Author: Brainstorm Force
 Contributors: brainstormforce, rushijagani
 Author URI: https://www.brainstormforce.com
 Description: Search any WordPress site's data using WP REST API.
-Version: 1.0.5
+Version: 1.0.4
 Text Domain: wp-remote-site-search
 */
 
 // plugin constants
-define('WP_REMOTE_SITE_SEARCH_VERSION', '1.0.5');
+define('WP_REMOTE_SITE_SEARCH_VERSION', '1.0.4');
 define('WP_REMOTE_SITE_SEARCH_DIR', plugin_dir_path( __FILE__ ));
 define('WP_REMOTE_SITE_SEARCH_URL', plugins_url( '', __FILE__ ));
 // plugin functionality files
