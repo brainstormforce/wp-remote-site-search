@@ -129,7 +129,7 @@ class wpRemoteSiteSearchShortcode{
 			<!-- search input box -->
 			<div id="input-wrapper">
 				<label><?php echo esc_attr( $atts['title'] );?></label>
-				<input itemprop="query-input" type="text" data-object-type="<?php echo esc_attr( $type );?>" id="search-input" placeholder="<?php echo esc_attr( $atts['placeholder'] );?>" data-remote-url=<?php echo esc_attr($atts['remote_url']);?> data-cat="<?php echo esc_attr($category_id);?>" data-sub-cat="<?php echo esc_attr($atts['sub_categories']);?>">
+				<input itemprop="query-input" type="text" data-object-type="<?php echo esc_attr( $type );?>" id="search-input" placeholder="<?php echo esc_attr( $atts['placeholder'] );?>" data-remote-url="<?php echo esc_attr($atts['remote_url']);?>" data-cat="<?php echo esc_attr($category_id);?>" data-sub-cat="<?php echo esc_attr($atts['sub_categories']);?>">
 				<div id="search-loading" class="search-loading"><div class="search-loader"></div></div>
 			</div>
 			<!-- results count -->
