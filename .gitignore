@@ -32,3 +32,4 @@ package-lock.json
 
 # Ignore Composer's directories
 vendor/
+config.bat
