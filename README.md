@@ -3,8 +3,8 @@
 **Donate link:** https://www.paypal.me/BrainstormForce  
 **Requires at least:** 4.4  
 **Tags:** remote site search, live search, multisite search  
-**Stable tag:** 1.0.5 
-**Tested up to:** 6.3.1
+**Stable tag:** 1.0.5  
+**Tested up to:** 6.3.1  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -26,7 +26,7 @@ Here’s a list of shortcodes currently available in the WP Remote Site Search p
 
 1.`remote_url="https://example.com"`
 
-	URL from where you want to fetch the informaion
+	URL from where you want to fetch the information
 	The remote site should have WordPress 4.7 or higher or Rest API (v2) plugin installed to get the search results.
 
 2.`title="How can we help?"`
@@ -73,7 +73,6 @@ Example:
 
 
 ## Changelog##
-
 ### 1.0.5 ###
 - Fix: Enclosed data attribute in quotes to prevent Cross-Site Scripting (XSS)
 
