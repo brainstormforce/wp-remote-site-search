@@ -124,7 +124,7 @@ class wpRemoteSiteSearchShortcode{
 		ob_start();
 		?>
 		<!-- search box wrapper -->
-		<div id="search-wrapper" class="search-wrapper wrapper" data-number=<?php echo esc_attr($atts['max_results']); ?> >
+		<div id="search-wrapper" class="search-wrapper wrapper" data-number="<?php echo esc_attr($atts['max_results']); ?>" >
 
 			<!-- search input box -->
 			<div id="input-wrapper">
