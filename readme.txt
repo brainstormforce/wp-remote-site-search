@@ -73,7 +73,7 @@ Example:
 
 == Changelog ==
 
-= 1.0.5 =
+= 1.0.6 =
 - Improvement: Compatibility to WordPress 6.6.
 
 = 1.0.5 =
