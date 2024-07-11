@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: WP Remote Site Search
-Plugin URI: https://www.brainstormforce.com
-Author: Brainstorm Force
-Author URI: https://www.brainstormforce.com
+Plugin URI: https://pratikchaskar.com/
+Author: Pratik Chaskar
+Author URI: https://pratikchaskar.com/
 Description: Search any WordPress site's data using WP REST API.
-Version: 1.0.5
+Version: 1.0.6
 Text Domain: wp-remote-site-search
 */
 
