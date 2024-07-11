@@ -1,10 +1,10 @@
 === WP Remote Site Search ===
-Contributors: brainstormforce
+Contributors: pratikchaskar
 Donate link: https://www.paypal.me/BrainstormForce
 Requires at least: 4.4
 Tags: remote site search, live search, multisite search
-Stable tag: 1.0.5
-Tested up to: 6.3.1
+Stable tag: 1.0.6
+Tested up to: 6.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,12 +71,16 @@ Example:
 5. Activate the plugin in the Plugin dashboard
 
 
-== Changelog==
+== Changelog ==
+
+= 1.0.6 =
+- Improvement: Compatibility to WordPress 6.6.
+
 = 1.0.5 =
 - Fix: Enclosed data attribute in quotes to prevent Cross-Site Scripting (XSS)
 
 = 1.0.4 =
-- Improvement - Compatibility to WordPress 5.6.
+- Improvement: Compatibility to WordPress 5.6.
 
 = 1.0.3 =
 - Improvements: Enqueue scripts only where shortcode is used.
