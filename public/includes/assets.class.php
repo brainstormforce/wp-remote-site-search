@@ -31,11 +31,6 @@ class wpRemoteSiteSearchAssets
 		add_action('wp_enqueue_scripts',	array($this,'remote_site_search_styles'), 99);
 
 		add_action( 'plugins_loaded',       array( $this, 'load_textdomain' ) );
-
-		// setup plugin links
-		$plugin_links = new WRSS_Links();
-		$plugin_links->setup();
-
     }
 
    /**
