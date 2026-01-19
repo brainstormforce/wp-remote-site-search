@@ -32,9 +32,6 @@ class wpRemoteSiteSearchAssets
 
 		add_action( 'plugins_loaded',       array( $this, 'load_textdomain' ) );
 
-		// include plugin links class
-		require_once( WP_REMOTE_SITE_SEARCH_DIR. '/public/includes/plugin-links-class.php' );
-
 		// setup plugin links
 		$plugin_links = new WRSS_Links();
 		$plugin_links->setup();
