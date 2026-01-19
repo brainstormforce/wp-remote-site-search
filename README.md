@@ -1,10 +1,9 @@
 # WP Remote Site Search #
 **Contributors:** [pratikchaskar](https://profiles.wordpress.org/pratikchaskar)  
-**Donate link:** https://www.paypal.me/BrainstormForce  
 **Requires at least:** 4.4  
 **Tags:** remote site search, live search, multisite search  
-**Stable tag:** 1.0.6  
-**Tested up to:** 6.6  
+**Stable tag:** 1.0.7  
+**Tested up to:** 6.9  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -72,6 +71,9 @@ Example:
 
 
 ## Changelog ##
+
+### 1.0.7 ###
+Improvement:Codebase and Compatibility to WordPress 6.9
 
 ### 1.0.6 ###
 - Improvement: Compatibility to WordPress 6.6.

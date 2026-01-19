@@ -1,15 +1,15 @@
-# Copyright (C) 2023 Brainstorm Force
+# Copyright (C) 2026 Pratik Chaskar
 # This file is distributed under the same license as the WP Remote Site Search package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Remote Site Search 1.0.5\n"
+"Project-Id-Version: WP Remote Site Search 1.0.7\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/wp-remote-site-search\n"
-"POT-Creation-Date: 2023-09-21 10:01:54+00:00\n"
+"POT-Creation-Date: 2026-01-19 12:43:43+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2026-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: en\n"
@@ -23,32 +23,28 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-Bookmarks: \n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: grunt-wp-i18n 1.0.3\n"
+"X-Generator: grunt-wp-i18n 1.0.4\n"
 
-#: public/includes/assets.class.php:56
+#: public/includes/assets.class.php:53
 msgid "Search must be at least 3 characters."
 msgstr ""
 
-#: public/includes/assets.class.php:57
+#: public/includes/assets.class.php:54
 msgid "No results found. Try again with different words?"
 msgstr ""
 
-#: public/includes/assets.class.php:58
+#: public/includes/assets.class.php:55
 msgid "We found"
 msgstr ""
 
-#: public/includes/assets.class.php:59
+#: public/includes/assets.class.php:56
 msgid "articles that may help:"
 msgstr ""
 
-#: public/includes/assets.class.php:60
+#: public/includes/assets.class.php:57
 msgid ""
 "The remote site should have WordPress 4.7 or higher or Rest API (v2) plugin "
 "installed to get the search results."
-msgstr ""
-
-#: public/includes/plugin-links-class.php:20
-msgid "Plugin Documentation"
 msgstr ""
 
 #: public/includes/shortcode.class.php:45
@@ -64,7 +60,7 @@ msgid "WP Remote Site Search"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://www.brainstormforce.com"
+msgid "https://pratikchaskar.com/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -72,5 +68,5 @@ msgid "Search any WordPress site's data using WP REST API."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Brainstorm Force"
+msgid "Pratik Chaskar"
 msgstr ""
