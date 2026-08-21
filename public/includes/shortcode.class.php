@@ -44,7 +44,7 @@ class wpRemoteSiteSearchShortcode{
 		$defaults = array(
 			'title'				=> __( 'How can we help?', 'wp-remote-site-search' ), // title for searcbox
 			'placeholder'		=> __( 'Search...', 'wp-remote-site-search' ), // placeholder
-			'remote_url'		=> '', //remote url
+			'remote_url'		=> site_url(), //remote url
 			'category_id'		=> '', //category id
 			'max_results'		=> 30, // return a certain number of search results
 			'html_input'		=> '', //html input to add after results
